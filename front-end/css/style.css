@@ -2,20 +2,29 @@ body{
     font-family: 'Arvo';
     margin:0px;
     font-weight: bold;
+    background-color: #292726;
 }
 div{
     display: flex;
     flex-direction: column;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items:stretch;
+    padding: 20px;
+    justify-content: space-evenly;
+    background-color: gray;
+    border-radius: 20px;
+}
 header{
-    background-color: black;
     color:white;
     padding:10px;
 }
 main{
     display: flex;
     flex-direction: column;
-    background-color: #292726;
     color: #51A792;
     text-align:center;
     padding:10px;
@@ -69,6 +78,6 @@ article{
 #campoTarefa
 {
     background-color: antiquewhite;
-    border: 1px solid #51A792;
-    padding: 1px 14% 1px 12%;
+    border: 2px solid #51A792;
+    padding: 1px 10% 1px 12%;
 }
