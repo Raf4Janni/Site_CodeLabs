@@ -1,5 +1,4 @@
 var submit = document.getElementById("envio");
-
 submit.addEventListener("click", (e)=>{
     e.preventDefault();
     var nome = document.getElementById("nome").value;
