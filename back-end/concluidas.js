@@ -15,7 +15,7 @@ let tarefas=[]
         concluida 
     })
 
-     descricao = "lista de calculo"
+    descricao = "lista de calculo"
      data = "21-12-2021"
      prioridade = 1
      concluida = true
@@ -32,9 +32,10 @@ let tarefas=[]
 
 function listarTarefas()
 {
-    const tarefasPendentes = tarefas.filter(filtrarConcluidas)
-    console.log(tarefas)
-    tarefasPendentes.forEach(printarTarefa)
+    const tarefasConcluidas = tarefas.filter(filtrarConcluidas)
+    console.log(tarefasConcluidas)
+    console.log("oooi")
+    tarefasConcluidas.forEach(printarTarefa)
 }
 
 function printarTarefa(item)
@@ -54,11 +55,6 @@ function printarTarefa(item)
         div.appendChild(pData);
         div.appendChild(pPriori);
 
-        let botaoAlterar = document.createElement("a")
-        botaoAlterar.setAttribute("href","editarTarefa.html")
-        botaoAlterar.innerText = "editar"
-        div.appendChild(botaoAlterar)
-
         pDesc.innerText = item.descricao;
         pData.innerText = item.data;
         pPriori.innerText = item.prioridade;
@@ -67,5 +63,6 @@ function printarTarefa(item)
 
 function filtrarConcluidas(tarefa)
 {
-    return tarefa.concluida == false;
+    return tarefa.concluida == true;
 }
+
