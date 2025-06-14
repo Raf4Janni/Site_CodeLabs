@@ -19,3 +19,19 @@ botaoAdicionar.addEventListener("click", () =>{
     document.getElementById("data").value=""
     document.getElementById("pri").value=""
 })
+
+let idRecebido = 0;
+const botaoAtualizar = document.getElementById("botaoEditar")
+botaoAtualizar.addEventListener("click",() =>{
+    let descricao = document.getElementById("desc")
+    let data = document.getElementById("data")
+    let prioridade = document.getElementById("pri")
+    tarefas.map(tarefa =>{
+        if(tarefa.id == idRecebido){
+            tarefa.descricao = descricao
+            tarefa.data = data
+            tarefa.prioridade = prioridade
+        }
+        return tarefa
+    })
+})
