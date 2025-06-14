@@ -2,6 +2,8 @@ let tarefas=[]
 
 //const botaoRefresh = document.getElementById("botaoRefresh")
 //botaoRefresh.addEventListener("click", () =>{
+
+    /////// informacoes para teste ///////
     let id = 0
     let descricao = "lista de ga"
     let data = "12/6/2012"
@@ -47,9 +49,12 @@ function printarTarefa(item)
         pData.setAttribute("id","campoTarefa");
         let pPriori = document.createElement("div");
         pPriori.setAttribute("id","campoTarefa");
+        let checkBox = document.createElement("input")
+        checkBox.setAttribute("type","checkbox")
 
         section.appendChild(div);
         div.setAttribute("id","tarefa");
+        div.appendChild(checkBox)
         div.appendChild(pDesc);
         div.appendChild(pData);
         div.appendChild(pPriori);
