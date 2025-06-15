@@ -1,10 +1,11 @@
+//Verifica se o usuario esta logado, se nao estiver redireciona para a pagina de login
 var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
 if(usuario == null || usuario == "")
 {
     window.location.href = "login.html";
 }
 
-let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]");
+let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]"); // pega as tarefas do usuario logado se nao existir cria um array vazio
 tarefas.sort(function(a, b){return b.prioridade - a.prioridade}); // ordena por prioridade
 //const botaoRefresh = document.getElementById("botaoRefresh")
 //botaoRefresh.addEventListener("click", () =>{
@@ -23,7 +24,7 @@ function listarTarefas()
 
 function printarTarefa(item)
 {
-    const section = document.getElementById("tarefas");
+    const section = document.getElementById("tarefas"); //cria uma nova seção para cada tarefa
     const div = document.createElement("div");
         let pDesc = document.createElement("div");
         pDesc.setAttribute("class","campoTarefa");
@@ -33,15 +34,16 @@ function printarTarefa(item)
         pPriori.setAttribute("class","campoTarefa");
         let checkBox = document.createElement("input")
         checkBox.setAttribute("type","checkbox")
+        //função para apagar a tarefa da página de index quando for concluída
         checkBox.addEventListener("click", ()=>{
             if(checkBox.checked == true)
             {
                 var indice =  tarefas.findIndex(
                     tarefa => tarefa.descricao === item.descricao && tarefa.data === item.data && tarefa.prioridade === item.prioridade
                 )
-                tarefas[indice].concluida = true;
+                tarefas[indice].concluida = true; // altera o status da tarefa para concluída
                 window.localStorage.setItem(usuario, JSON.stringify(tarefas));
-                section.removeChild(div);
+                section.removeChild(div); //apaga a seção 
             }  
         })
 
@@ -65,7 +67,15 @@ function printarTarefa(item)
         pPriori.innerText = item.prioridade;
 }
 
+ // função para filtrar as tarefas não concluídas
 function filtrarConcluidas(tarefa)
 {
     return tarefa.concluida == false;
 }
+
+//Encerra a sessão do usuário
+var btn = document.getElementById("btn-sair");
+btn.addEventListener("click", ()=>{
+    window.localStorage.removeItem("usuarioLogado");
+    window.location.href = "login.html";
+})

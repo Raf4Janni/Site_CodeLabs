@@ -1,3 +1,4 @@
+//verifica se o usuário está logado
 var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
 if(usuario == null || usuario == "")
 {
@@ -45,4 +46,12 @@ function filtrarConcluidas(tarefa)
 {
     return tarefa.concluida == true;
 }
+
+
+//Encerrar sessão do usuário
+var btn = document.getElementById("btn-sair");
+btn.addEventListener("click", ()=>{
+    window.localStorage.removeItem("usuarioLogado");
+    window.location.href = "login.html";
+})
 

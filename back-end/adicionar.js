@@ -1,9 +1,12 @@
+//Verificação para ver se o usuário está logad
 var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
 if(usuario == null || usuario == "")
 {
-    window.location.href = "login.html";
+    window.location.href = "login.html"; // se não estiver logado volta ao login
 }
-let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]");
+
+
+let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]"); //leitura das tarefas já adicioandas, se não houver nenhuma, é um array vazio
 const botaoAdicionar = document.getElementById("botaoAdicionar")
 botaoAdicionar.addEventListener("click", () =>{
     let descricao = document.getElementById("desc").value
@@ -16,6 +19,13 @@ botaoAdicionar.addEventListener("click", () =>{
         prioridade,
         concluida
     })
-    window.localStorage.setItem(usuario, JSON.stringify(tarefas));
+    window.localStorage.setItem(usuario, JSON.stringify(tarefas)); // salva as tarefas no localStorage de acordo com o email do usuário
     window.location.href = "index.html";
+})
+
+//Encerra a sessão do usuário
+var btn = document.getElementById("btn-sair");
+btn.addEventListener("click", ()=>{
+    window.localStorage.removeItem("usuarioLogado");
+    window.location.href = "login.html";
 })

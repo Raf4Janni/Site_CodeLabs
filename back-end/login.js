@@ -1,3 +1,9 @@
+//verifica se o usuário está logado
+var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado"));
+if(usuario)
+{
+    window.location.replace("index.html");
+}
 let lista = JSON.parse(localStorage.getItem("usuario") || "[]");
 console.log(lista);
 var flag =0;
@@ -11,15 +17,15 @@ submit.addEventListener("click", (e)=>{
         window.location.href = "login.html"
     }
     else{
-        for(let item of lista){
-            if(item.email == nome.value && item.senha == senha.value){
+        for(let item of lista){ //poderia ser feito com findIndex, descobri essa função depois
+            if(item.email == nome.value && item.senha == senha.value){ //verifica se o usuário foi cadastrado
                 window.location.href = "index.html";
                 flag =1;
-                window.localStorage.setItem("usuarioLogado", JSON.stringify(item));
+                window.localStorage.setItem("usuarioLogado", JSON.stringify(item));// armazena o usuário logado
                 break;
             } 
         }
-        if(flag==0){
+        if(!flag){// tratamento para caso o usuário não seja encontrado
             alert("Usuário ou senha incorretos!");
             nome.setAttribute("style", "background-color: #F78C8C; color: white;");
             senha.setAttribute("style", "background-color: #F78C8C;");

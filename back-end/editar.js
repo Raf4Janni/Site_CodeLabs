@@ -1,3 +1,4 @@
+//verifica se o usuário está logado
 var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
 if(usuario == null || usuario == "")
 {
@@ -15,9 +16,11 @@ botaoAtualizar.addEventListener("click",() =>{
     let descricao = document.getElementById("desc").value;
     let data = document.getElementById("data").value;
     let prioridade = document.getElementById("pri").value;
+    //procura o índeice da array tarefas que contém as mesmas informações da tarefa selecionada
     var indice = tarefas.findIndex(tarefa =>
         tarefa.descricao === lista.descricao && tarefa.data === lista.data && tarefa.prioridade === lista.prioridade
     )
+    //altera a tarefa selecionada com as novas informações
     tarefas[indice] = {
         descricao,
         data,
@@ -27,3 +30,10 @@ botaoAtualizar.addEventListener("click",() =>{
     window.localStorage.setItem(usuario, JSON.stringify(tarefas));
     window.location.href = "index.html";
 });
+
+//Encerra sessão do usuário
+var btn = document.getElementById("btn-sair");
+btn.addEventListener("click", ()=>{
+    window.localStorage.removeItem("usuarioLogado");
+    window.location.href = "login.html";
+})
