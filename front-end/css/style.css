@@ -78,7 +78,7 @@ article{
     margin-left: 5%;
 }
 
-#campoTarefa
+.campoTarefa
 {
     background-color: antiquewhite;
     border: 2px solid #51A792;
@@ -87,7 +87,7 @@ article{
 }
 
 @media screen and (max-width: 600px) {
-    #campoTarefa{
+    .campoTarefa{
         width: 100%;
         padding: 1px 5% 1px 5%;
         font-size: 9px;

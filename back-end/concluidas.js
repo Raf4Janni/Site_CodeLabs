@@ -1,31 +1,11 @@
-let tarefas=[]
-
+var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
+if(usuario == null || usuario == "")
+{
+    window.location.href = "login.html";
+}
+let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]");
 //const botaoRefresh = document.getElementById("botaoRefresh")
 //botaoRefresh.addEventListener("click", () =>{
-    let id = 0
-    let descricao = "lista de ga"
-    let data = "12/6/2012"
-    let prioridade = 3
-    let concluida = false
-    tarefas.push({
-        id,
-        descricao,
-        data,
-        prioridade,
-        concluida 
-    })
-
-    descricao = "lista de calculo"
-     data = "21-12-2021"
-     prioridade = 1
-     concluida = true
-    tarefas.push({
-        id,
-        descricao,
-        data,
-        prioridade,
-        concluida 
-    })
 
     listarTarefas()
 //})
@@ -43,11 +23,11 @@ function printarTarefa(item)
     const section = document.getElementById("tarefas");
     const div = document.createElement("div");
         let pDesc = document.createElement("div");
-        pDesc.setAttribute("id","campoTarefa");
+        pDesc.setAttribute("class","campoTarefa");
         let pData = document.createElement("div");
-        pData.setAttribute("id","campoTarefa");
+        pData.setAttribute("class","campoTarefa");
         let pPriori = document.createElement("div");
-        pPriori.setAttribute("id","campoTarefa");
+        pPriori.setAttribute("class","campoTarefa");
 
         section.appendChild(div);
         div.setAttribute("id","tarefa");
