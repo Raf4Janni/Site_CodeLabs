@@ -12,7 +12,7 @@ tarefas.sort(function(a, b){return b.prioridade - a.prioridade}); // ordena por 
     /////// informacoes para teste ///////
 
     listarTarefas()
-//})
+
 
 function listarTarefas()
 {
@@ -63,8 +63,6 @@ function printarTarefa(item)
         pDesc.innerText = item.descricao;
         pData.innerText = item.data;
         pPriori.innerText = item.prioridade;
-        
-        //console.log(item.descricao.value, item.data.value);
 }
 
 function filtrarConcluidas(tarefa)
