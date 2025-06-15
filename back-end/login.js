@@ -32,3 +32,17 @@ submit.addEventListener("click", (e)=>{
         }
     }
 });
+
+// Funcionalidade de mostrar/esconder a senha
+var ckVerSenha = document.getElementById("ckbox");
+var lbl = document.querySelector("label[for='ckbox']");
+ckVerSenha.addEventListener("click", ()=>{
+    var senha = document.getElementById("senha");
+    if(senha.type == "password"){
+        senha.type = "text";
+        lbl.innerHTML = "Esconder Senha";
+    }else{
+        senha.type = "password";
+        lbl.innerHTML = "Ver Senha";
+    }
+})

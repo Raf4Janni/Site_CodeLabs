@@ -32,3 +32,23 @@ submit.addEventListener("click", (e)=>{
         window.location.href = "index.html";
     }
 });
+
+var ckVerSenha = document.querySelectorAll("input[type='checkbox']");
+var inputSenha = document.querySelectorAll("input[type='password'");
+var lbl= document.querySelectorAll("label[for]");
+ckVerSenha[0].addEventListener("click", ()=>{
+    mostraSenha(inputSenha[0], lbl[0]);
+})
+ckVerSenha[1].addEventListener("click", ()=>{
+    mostraSenha(inputSenha[1], lbl[1]);
+})
+
+function mostraSenha(s, label){
+    if(s.type == "password"){
+        s.type = "text";
+        label.innerHTML = "Esconder senha";
+    }else{
+        s.type = "password";
+        label.innerHTML = "Ver senha"
+    }
+}
