@@ -33,6 +33,7 @@ function printarTarefa(item)
         pPriori.setAttribute("class","campoTarefa");
         let checkBox = document.createElement("input")
         checkBox.setAttribute("type","checkbox")
+        checkBox.setAttribute("class","ckbox")
         //função para apagar a tarefa da página de index quando for concluída
         checkBox.addEventListener("click", ()=>{
             if(checkBox.checked == true)
@@ -41,7 +42,7 @@ function printarTarefa(item)
                     tarefa => tarefa.descricao === item.descricao && tarefa.data === item.data && tarefa.prioridade === item.prioridade
                 )
                 tarefas[indice].concluida = true; // altera o status da tarefa para concluída
-                window.localStorage.setItem(usuario, JSON.stringify(tarefas));
+                window.localStorage.setItem(usuario.email, JSON.stringify(tarefas));
                 section.removeChild(div); //apaga a seção 
             }  
         })
