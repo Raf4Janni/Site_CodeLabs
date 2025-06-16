@@ -1,10 +1,10 @@
 //verifica se o usuário está logado
-var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
+var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado"));
 if(usuario == null || usuario == "")
 {
     window.location.href = "login.html";
 }
-let tarefas = JSON.parse(window.localStorage.getItem(usuario));
+let tarefas = JSON.parse(window.localStorage.getItem(usuario.email));
 //let idRecebido = 0;
 let lista = JSON.parse(window.localStorage.getItem("tarefaSelecionada")) || "";
 const botaoAtualizar = document.getElementById("botaoEditar")
@@ -27,7 +27,7 @@ botaoAtualizar.addEventListener("click",() =>{
         prioridade: prioridade,
         concluida: false
     }
-    window.localStorage.setItem(usuario, JSON.stringify(tarefas));
+    window.localStorage.setItem(usuario.email, JSON.stringify(tarefas));
     window.location.href = "index.html";
 });
 

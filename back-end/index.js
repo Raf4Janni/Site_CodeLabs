@@ -1,11 +1,10 @@
 //Verifica se o usuario esta logado, se nao estiver redireciona para a pagina de login
-var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
+var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado"));
 if(usuario == null || usuario == "")
 {
     window.location.href = "login.html";
 }
-
-let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]"); // pega as tarefas do usuario logado se nao existir cria um array vazio
+let tarefas=JSON.parse(window.localStorage.getItem(usuario.email) || "[]"); // pega as tarefas do usuario logado se nao existir cria um array vazio
 tarefas.sort(function(a, b){return b.prioridade - a.prioridade}); // ordena por prioridade
 //const botaoRefresh = document.getElementById("botaoRefresh")
 //botaoRefresh.addEventListener("click", () =>{
