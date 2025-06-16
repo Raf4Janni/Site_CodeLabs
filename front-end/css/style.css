@@ -17,6 +17,7 @@ form{
     justify-content: space-evenly;
     background-color: gray;
     border-radius: 20px;
+    width:33%;
 }
 header{
     color:white;
@@ -47,16 +48,32 @@ input{
     padding:10px;
     border-radius: 10px;
     align-self: center;
+    width:80%;
+    margin:1%;
 }
 p{
     font-size:20px;
 }
 article{
     font-size: 40px;
+    margin:10px;
 }
-#botaoFinal{
+label{
+    margin:5%;
+}
+#botaoAdicionar{
     background-color: #51A792;
     align-self: center;
+}
+#botaoEditar{
+    background-color: #51A792;
+    align-self: center;
+}
+#envio{
+    background-color: #51A792;
+    align-self: center;
+    padding:10px;
+    border-radius: 10px;
 }
 
 #tarefa{

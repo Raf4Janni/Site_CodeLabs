@@ -13,19 +13,18 @@
         <header>Aqui ficará o header
             <button id="btn-sair">Sair</button>
         </header>
+        <nav><a href="index.html"><button id="botaoVoltar">Voltar</button></a></nav>
         <main>
-            <a href="index.html"><button>Voltar</button></a>
-            <p>Adicionar Tarefa</p>
-            <article id="principal">
+            <article>Adicionar Tarefa</article>
+            <form>
                 <label>Descrição</label>
                 <input type="text" placeholder="Digite a descrição" id="desc">
                 <label>Data</label>
                 <input type="date" id="data">
-                <label>Prioridade</label>
-                <input type="number" id="pri" min="1" max="5"><br><br>
-                <label>1-5 Menos à</label>
-                <a href="index.html"><button id="botaoAdicionar">Salvar</button></a>
-            </article>
+                <label>Prioridade (1-5 Menos à mais importante)</label>
+                <input type="number" id="pri" min="1" max="5">
+                <button id="botaoAdicionar">Salvar</button>
+            </form>
         </main>
         <footer>
             Aqui ficará o footer!
