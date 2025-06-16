@@ -43,6 +43,16 @@ function printarTarefa(item)
                 )
                 tarefas[indice].concluida = true; // altera o status da tarefa para concluída
                 window.localStorage.setItem(usuario.email, JSON.stringify(tarefas));
+                /*section.animate(
+                    [
+                        { transform: "translateX(0px)" },
+                        { transform: "translateX(500px)"}
+                    ],
+                    {
+                        duration: 1000,
+                        iterations: 1,
+                    },
+                )*/
                 section.removeChild(div); //apaga a seção 
             }  
         })

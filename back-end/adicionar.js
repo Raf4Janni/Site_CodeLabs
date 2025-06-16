@@ -20,7 +20,6 @@ botaoAdicionar.addEventListener("click", () =>{
         concluida
     })
     window.localStorage.setItem(usuario.email, JSON.stringify(tarefas)); // salva as tarefas no localStorage de acordo com o email do usuário
-    window.location.href = "index.html";
 })
 
 //Encerra a sessão do usuário
