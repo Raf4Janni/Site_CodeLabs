@@ -109,6 +109,7 @@ label{
 {
     transform: scale(2);
     border: 2px solid #51A792;
+    max-width: 26px;
 }
 
 .ckboxo
