@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div id="img_codelab">
+            <img src = "https://codelab.icmc.usp.br/assets/logo_simplified_white_coloured-aQ7omc_n.png" alt="CodeLab" width="30" height = "auto">
+        </div>
+        <div id="botao_header">
+                <button id = "inicio"> Inicio </button>
+                <button id = "adicionar"> Adicionar Tarefa </button>
+                <button id = "concluidas"> Tarefas Concluidas </button>
+                <button id = "editar"> Editar Tarefas</button>
+                <button id="btn-sair">Sair</button>
+        </div>
+    </header>
+    <main>
+        <article>Login</article>
+            <form>
+                <label>Email</label>
+                <input type="email" id="nome" placeholder="Email" required><br>
+                <label>Senha</label>
+                <input type="password" id="senha" placeholder="Senha" required>
+                <input type="checkbox" id="ckbox" class="ckboxo"><label for="ckbox">Ver senha</label><br>
+                <input type="submit" id="envio" placeholder=" Logar"><br>
+                <a href="cadastro.html">Não tem conta? Cadastre-se</a>
+            </form>
+    </main>
+    <script src="../../back-end/login.js" type="module"></script>
+    <script src="../../back-end/header.js"></script>
+</body>
+</html>
