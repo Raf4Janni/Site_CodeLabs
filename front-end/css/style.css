@@ -4,7 +4,7 @@ body{
     font-weight: bold;
     background-color: #292726;
 }
-div{
+main > div{
     display: flex;
     flex-direction: column;
 }
@@ -62,6 +62,7 @@ article{
     background-color: #51A792;
     align-self: center;
 }
+
 #envio{
     background-color: #51A792;
     align-self: center;
@@ -124,4 +125,38 @@ article{
     #tarefa{
         height: 30%;
     }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#botao_header {
+    display: flex;
+    align-items: center;
+}
+
+#botao_header button {
+    background-color: #292726;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: backgroud-color 0.3s ease;
+}
+
+#botao_header button:hover {   
+    color:#51A792;
+}
+
+#botao_header button:active {
+    transform: scale(0.98);
+    color: white;
+}
+
+#img_codelab {
+    padding-left: 10px;
+
 }
