@@ -29,9 +29,35 @@ function printarTarefa(item)
         pData.setAttribute("class","campoTarefa");
         let pPriori = document.createElement("div");
         pPriori.setAttribute("class","campoTarefa");
+        let checkBox = document.createElement("input")
+        checkBox.setAttribute("type","checkbox")
+        checkBox.setAttribute("class","ckbox")
+        //função para apagar a tarefa da página de index quando for concluída
+        checkBox.addEventListener("click", ()=>{
+            if(checkBox.checked == true)
+            {
+                var indice =  tarefas.findIndex(
+                    tarefa => tarefa.descricao === item.descricao && tarefa.data === item.data && tarefa.prioridade === item.prioridade
+                )
+                tarefas[indice].concluida = false; // altera o status da tarefa para concluída
+                window.localStorage.setItem(usuario.email, JSON.stringify(tarefas));
+                /*section.animate(
+                    [
+                        { transform: "translateX(0px)" },
+                        { transform: "translateX(500px)"}
+                    ],
+                    {
+                        duration: 1000,
+                        iterations: 1,
+                    },
+                )*/
+                section.removeChild(div); //apaga a seção 
+            }  
+        })
 
         section.appendChild(div);
         div.setAttribute("id","tarefa");
+        div.appendChild(checkBox)
         div.appendChild(pDesc);
         div.appendChild(pData);
         div.appendChild(pPriori);

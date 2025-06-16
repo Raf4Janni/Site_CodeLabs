@@ -8,7 +8,8 @@ if(usuario == null || usuario == "")
 
 let tarefas=JSON.parse(window.localStorage.getItem(usuario.email) || "[]"); //leitura das tarefas já adicioandas, se não houver nenhuma, é um array vazio
 const botaoAdicionar = document.getElementById("botaoAdicionar")
-botaoAdicionar.addEventListener("click", () =>{
+botaoAdicionar.addEventListener("click", (e) =>{
+    e.preventDefault()
     let descricao = document.getElementById("desc").value
     let data = document.getElementById("data").value
     let prioridade = parseInt(document.getElementById("pri").value)
@@ -20,6 +21,7 @@ botaoAdicionar.addEventListener("click", () =>{
         concluida
     })
     window.localStorage.setItem(usuario.email, JSON.stringify(tarefas)); // salva as tarefas no localStorage de acordo com o email do usuário
+    window.location.href = "index.html"
 })
 
 //Encerra a sessão do usuário

@@ -12,7 +12,8 @@ document.getElementById("desc").value = lista.descricao
 document.getElementById("data").value = lista.data
 document.getElementById("pri").value = lista.prioridade
 console.log(window.localStorage.getItem("tarefaSelecionada"));
-botaoAtualizar.addEventListener("click",() =>{
+botaoAtualizar.addEventListener("click",(e) =>{
+    e.preventDefault()
     let descricao = document.getElementById("desc").value;
     let data = document.getElementById("data").value;
     let prioridade = document.getElementById("pri").value;
@@ -27,8 +28,8 @@ botaoAtualizar.addEventListener("click",() =>{
         prioridade: prioridade,
         concluida: false
     }
-    window.localStorage.setItem(usuario.email, JSON.stringify(tarefas));
-    window.location.href = "index.html";
+    window.localStorage.setItem(usuario.email, JSON.stringify(tarefas))
+    window.location.href = "index.html"
 });
 
 //Encerra sessão do usuário
