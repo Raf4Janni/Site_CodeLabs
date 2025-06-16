@@ -1,12 +1,12 @@
 //Verificação para ver se o usuário está logad
-var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
+var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado"));
 if(usuario == null || usuario == "")
 {
     window.location.href = "login.html"; // se não estiver logado volta ao login
 }
 
 
-let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]"); //leitura das tarefas já adicioandas, se não houver nenhuma, é um array vazio
+let tarefas=JSON.parse(window.localStorage.getItem(usuario.email) || "[]"); //leitura das tarefas já adicioandas, se não houver nenhuma, é um array vazio
 const botaoAdicionar = document.getElementById("botaoAdicionar")
 botaoAdicionar.addEventListener("click", () =>{
     let descricao = document.getElementById("desc").value

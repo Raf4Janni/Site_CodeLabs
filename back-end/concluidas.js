@@ -1,10 +1,10 @@
 //verifica se o usuário está logado
-var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado")).email;
+var usuario = JSON.parse(window.localStorage.getItem("usuarioLogado"));
 if(usuario == null || usuario == "")
 {
     window.location.href = "login.html";
 }
-let tarefas=JSON.parse(window.localStorage.getItem(usuario) || "[]");
+let tarefas=JSON.parse(window.localStorage.getItem(usuario.email) || "[]");
 //const botaoRefresh = document.getElementById("botaoRefresh")
 //botaoRefresh.addEventListener("click", () =>{
 
