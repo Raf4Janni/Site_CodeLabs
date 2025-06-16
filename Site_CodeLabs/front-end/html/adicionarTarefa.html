@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Tarefa</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+    
+</head>
+<body>
+    <div>
+        <header>
+                    <div id="img_codelab">
+            <img src = "https://codelab.icmc.usp.br/assets/logo_simplified_white_coloured-aQ7omc_n.png" alt="CodeLab" width="30" height = "auto">
+        </div>
+        <div id="botao_header">
+            <button id = "inicio"> Inicio </button>
+            <button id = "concluidas"> Tarefas Concluidas </button>
+            <button id = "editar"> Editar Tarefas</button>
+            <button id="btn-sair">Sair</button>
+        </div>
+        </header>
+        <nav><a href="index.html"><button id="botaoVoltar">Voltar</button></a></nav>
+        <main>
+            <article>Adicionar Tarefa</article>
+            <form>
+                <label id="lbl">Descrição</label>
+                <input type="text" placeholder="Digite a descrição" id="desc">
+                <label id="lbl">Data</label>
+                <input type="date" id="data">
+                <label id="lbl">Prioridade (1-5 Menos à mais importante)</label>
+                <input type="number" id="pri" min="1" max="5">
+                <button id="botaoAdicionar">Salvar</button>
+            </form>
+        </main>
+    </div>
+    <script src="../../back-end/adicionar.js"></script>
+    <script src="../../back-end/header.js"></script>
+</body>
+</html>
