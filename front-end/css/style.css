@@ -30,13 +30,6 @@ main{
     text-align:center;
     padding:10px;
 }
-footer{
-    background-color: black;
-    color:white;
-    position: absolute;
-    bottom:0%;
-    width:100%
-}
 a, button{
     font-family: 'Arvo';
     padding:10px;
@@ -58,7 +51,7 @@ article{
     font-size: 40px;
     margin:10px;
 }
-label{
+#lbl{
     margin:5%;
 }
 #botaoAdicionar{

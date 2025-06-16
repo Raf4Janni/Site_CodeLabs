@@ -28,7 +28,7 @@ submit.addEventListener("click", (e)=>{
         if(!flag){// tratamento para caso o usuário não seja encontrado
             alert("Usuário ou senha incorretos!");
             nome.setAttribute("style", "background-color: #F78C8C; color: white;");
-            senha.setAttribute("style", "background-color: #F78C8C;");
+            senha.setAttribute("style", "background-color: #F78C8C; color:white;");
         }
     }
 });
