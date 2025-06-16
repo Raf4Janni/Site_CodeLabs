@@ -27,7 +27,7 @@ botaoAtualizar.addEventListener("click",() =>{
         prioridade: prioridade,
         concluida: false
     }
-    window.localStorage.setItem(usuario, JSON.stringify(tarefas));
+    window.localStorage.setItem(usuario.email, JSON.stringify(tarefas));
     window.location.href = "index.html";
 });
 

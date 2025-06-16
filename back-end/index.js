@@ -4,7 +4,6 @@ if(usuario == null || usuario == "")
 {
     window.location.href = "login.html";
 }
-
 let tarefas=JSON.parse(window.localStorage.getItem(usuario.email) || "[]"); // pega as tarefas do usuario logado se nao existir cria um array vazio
 tarefas.sort(function(a, b){return b.prioridade - a.prioridade}); // ordena por prioridade
 //const botaoRefresh = document.getElementById("botaoRefresh")

@@ -19,7 +19,7 @@ botaoAdicionar.addEventListener("click", () =>{
         prioridade,
         concluida
     })
-    window.localStorage.setItem(usuario, JSON.stringify(tarefas)); // salva as tarefas no localStorage de acordo com o email do usuário
+    window.localStorage.setItem(usuario.email, JSON.stringify(tarefas)); // salva as tarefas no localStorage de acordo com o email do usuário
     window.location.href = "index.html";
 })
 
