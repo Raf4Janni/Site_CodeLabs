@@ -29,6 +29,10 @@ submit.addEventListener("click", (e)=>{
             senha: senha.value
         });
         window.localStorage.setItem("usuario", JSON.stringify(lista));
+        window.localStorage.setItem("usuarioLogado", JSON.stringify({
+            email: email.value,
+            nome: nome.value
+        }));
         window.location.href = "index.html";
     }
 });
