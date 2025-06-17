@@ -13,3 +13,7 @@ document.getElementById('editar').onclick = function() {
 document.getElementById('concluidas').onclick = function() {
     window.location.href = 'tarefasConcluidas.html';
 };
+
+document.getElementById('img_codelab').onclick = function() {
+    window.location.href = 'index.html';
+};

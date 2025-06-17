@@ -16,7 +16,6 @@
                 <button id = "inicio"> Inicio </button>
                 <button id = "adicionar"> Adicionar Tarefa </button>
                 <button id = "concluidas"> Tarefas Concluidas </button>
-                <button id = "editar"> Editar Tarefas</button>
                 <button id="btn-sair">Sair</button>
         </div>
     </header>
@@ -29,12 +28,18 @@
                 <input type="text" id="nome" placeholder="Nome" required><br>
                 <label>Senha</label>
                 <input type="password" id="senha" placeholder="Senha" required>
-                <input type="checkbox" id="ckbox1" class="ckboxo"><label for="ckbox1">Ver senha</label><br>
+                <div id="senhas">
+                    <input type="checkbox" id="ckbox1" class="ckboxo"><label for="ckbox1">Ver senha</label><br>
+                </div>
                 <label>Confirmação de senha</label>
                 <input type="password" id="confSenha" placeholder="Confirme sua senha" required>
+                <div id="senhas">
                 <input type="checkbox" id="ckbox2" class="ckboxo"><label for="ckbox2">Ver senha</label><br>
+                </div>
+                <div id="botoes_envio">
                 <input type="submit" id="envio" placeholder=" Cadastrar"><br>
-                <a href="login.html">Já tem uma conta? Faça login</a>
+                <a href="login.html" class="ir_link">Já tem uma conta? Faça login</a>
+                </div>
             </form>
     </main>
     <script src="../../back-end/cadastro.js"></script>

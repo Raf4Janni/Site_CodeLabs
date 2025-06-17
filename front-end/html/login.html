@@ -16,7 +16,6 @@
                 <button id = "inicio"> Inicio </button>
                 <button id = "adicionar"> Adicionar Tarefa </button>
                 <button id = "concluidas"> Tarefas Concluidas </button>
-                <button id = "editar"> Editar Tarefas</button>
                 <button id="btn-sair">Sair</button>
         </div>
     </header>
@@ -27,9 +26,13 @@
                 <input type="email" id="nome" placeholder="Email" required><br>
                 <label>Senha</label>
                 <input type="password" id="senha" placeholder="Senha" required>
+                <div id="senhas">
                 <input type="checkbox" id="ckbox" class="ckboxo"><label for="ckbox">Ver senha</label><br>
+                </div>
+                <div id="botoes_envio">
                 <input type="submit" id="envio" placeholder=" Logar"><br>
-                <a href="cadastro.html">Não tem conta? Cadastre-se</a>
+                <a href="cadastro.html" class="ir_link">Não tem conta? Cadastre-se</a>
+                </div>
             </form>
     </main>
     <script src="../../back-end/login.js" type="module"></script>

@@ -66,7 +66,9 @@ function printarTarefa(item)
 
         let botaoAlterar = document.createElement("a")
         botaoAlterar.setAttribute("href","editarTarefa.html")
-        botaoAlterar.innerText = "editar"
+        botaoAlterar.setAttribute("class", "ir_link")
+        botaoAlterar.setAttribute("id", "btn-editar")
+        botaoAlterar.innerText = "Editar"
         botaoAlterar.addEventListener("click", ()=>{
             window.localStorage.setItem("tarefaSelecionada", JSON.stringify(item));
         })
