@@ -38,22 +38,15 @@ function printarTarefa(item)
         checkBox.addEventListener("click", ()=>{
             if(checkBox.checked == true)
             {
-                var indice =  tarefas.findIndex(
+                setTimeout(function(){
+                    var indice =  tarefas.findIndex(
                     tarefa => tarefa.descricao === item.descricao && tarefa.data === item.data && tarefa.prioridade === item.prioridade
                 )
                 tarefas[indice].concluida = true; // altera o status da tarefa para concluída
                 window.localStorage.setItem(usuario.email, JSON.stringify(tarefas));
-                /*section.animate(
-                    [
-                        { transform: "translateX(0px)" },
-                        { transform: "translateX(500px)"}
-                    ],
-                    {
-                        duration: 1000,
-                        iterations: 1,
-                    },
-                )*/
                 section.removeChild(div); //apaga a seção 
+                 },1000) //tempo de delay pra sumir
+                
             }  
         })
 

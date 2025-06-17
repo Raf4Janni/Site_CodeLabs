@@ -32,9 +32,10 @@ function printarTarefa(item)
         let checkBox = document.createElement("input")
         checkBox.setAttribute("type","checkbox")
         checkBox.setAttribute("class","ckbox")
+        checkBox.checked = true
         //função para apagar a tarefa da página de index quando for concluída
         checkBox.addEventListener("click", ()=>{
-            if(checkBox.checked == true)
+            if(checkBox.checked == false)
             {
                 var indice =  tarefas.findIndex(
                     tarefa => tarefa.descricao === item.descricao && tarefa.data === item.data && tarefa.prioridade === item.prioridade
